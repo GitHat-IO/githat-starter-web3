@@ -1,0 +1,46 @@
+{
+  "name": "githat-starter-web3",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test",
+    "chain": "anvil --fork-url https://sepolia.base.org --port 8545",
+    "pay": "node scripts/pay.mjs",
+    "merchant": "node scripts/merchant.mjs"
+  },
+  "dependencies": {
+    "@access0x1/react": "0.1.2",
+    "@coinbase/cdp-sdk": "1.60.0",
+    "@x402/core": "2.28.0",
+    "@x402/evm": "2.28.0",
+    "@x402/fetch": "2.28.0",
+    "@x402/next": "2.28.0",
+    "@x402/svm": "2.28.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "viem": "2.57.12"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "@solana/kit": {
+      "typescript": "$typescript"
+    },
+    "@solana/accounts": {
+      "typescript": "$typescript"
+    }
+  }
+}
